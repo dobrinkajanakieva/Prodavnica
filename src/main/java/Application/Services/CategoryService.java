@@ -3,14 +3,15 @@ package Application.Services;
 import Application.Models.Category;
 import Application.Models.Exceptions.CategoryNotFoundException;
 import Application.Repositories.CategoryRepository;
+import Application.Repositories.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CategoryService {
-    private final CategoryRepository categoryRepository;
+public class CategoryService implements ICategoryService {
+    private final ICategoryRepository categoryRepository;
 
     public CategoryService(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;

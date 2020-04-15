@@ -5,6 +5,7 @@ import Application.Models.Category;
 import Application.Models.Exceptions.BookNotFoundException;
 import Application.Repositories.BookRepository;
 import Application.Repositories.CategoryRepository;
+import Application.Repositories.IBookRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,9 +14,9 @@ import java.util.Base64;
 import java.util.List;
 
 @Service
-public class BookService {
-    private final BookRepository bookRepository;
-    private final CategoryService categoryService;
+public class BookService implements IBookService {
+    private final IBookRepository bookRepository;
+    private final ICategoryService categoryService;
 
     public BookService(BookRepository bookRepository,
                               CategoryService categoryService) {
@@ -36,24 +37,13 @@ public class BookService {
                 .orElseThrow(() -> new BookNotFoundException(id));
     }
 
-    public Book saveBook(String name, Integer numberOfCopies, MultipartFile image, Long categoryId) {
+    public Book saveBook(String name, Integer numberOfCopies, MultipartFile image, Long categoryId) throws IOException {
         Category category = this.categoryService.findById(categoryId);
-        Book book = new Book(null, name, numberOfCopies, category
-                //, image
-        );
+        Book book = new Book(null, name, numberOfCopies, category, image);
         return this.bookRepository.save(book);
     }
 
     public Book saveBook(Book book) {
-        return this.bookRepository.save(book);
-    }
-
-    public Book saveBook(Book book, String image){
-        Category category = this.categoryService.findById(book.getCategory().getId());
-        book.setCategory(category);
-        if (image != null) {
-            // book.setImage(image);
-        }
         return this.bookRepository.save(book);
     }
 
@@ -69,5 +59,9 @@ public class BookService {
 
     public void deleteById(Long id) {
         this.bookRepository.deleteById(id);
+    }
+
+    public boolean exists(Long id) {
+        return this.bookRepository.findById(id) != null;
     }
 }

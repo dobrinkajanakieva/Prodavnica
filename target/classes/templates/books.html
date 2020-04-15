@@ -69,7 +69,7 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-<!--                        <th scope="col">Image</th>-->
+                        <th scope="col">Image</th>
                         <th scope="col">Book</th>
                         <th scope="col">Available</th>
                         <th scope="col">Quantity</th>
@@ -79,7 +79,7 @@
                     </thead>
                     <tbody>
                     <tr th:each="book : ${books}">
-<!--                        <td><img src="${book.getImage()}" th:src="${book.getImage()}" width="50" height="50"/></td>-->
+                        <td><img th:src="${book.getImageBase64()}" width="50" height="50" alt="Book cover"/></td>
                         <td th:text="${book.getName()}"></td>
                         <td th:text="${book.getNumberOfCopies() > 0 } ? 'In stock' : 'Out of stock'"></td>
                         <td th:text="${book.getNumberOfCopies()}"></td>

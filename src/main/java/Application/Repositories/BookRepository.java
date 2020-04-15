@@ -25,37 +25,27 @@ public class BookRepository implements IBookRepository {
         this.counter = 0L;
         this.books = new HashMap<>();
         Long id = this.generateKey();
-//        Path path1 = Paths.get("C:\\Users\\User\\Desktop\\emt\\Prodavnica\\src\\main\\resources\\templates\\book-cover1.jpg");
-//        String name1 = "book-cover1.jpg";
-//        String originalFileName1 = "book-cover1.jpg";
-//        String contentType1 = "image/jpg";
-//        byte[] content1 = null;
-//        try {
-//            content1 = Files.readAllBytes(path1);
-//        } catch (final IOException e) {
-//        }
-//        MultipartFile image1 = new MockMultipartFile(name1,
-//                originalFileName1, contentType1, content1);
+        Path path1 = Paths.get("src/main/resources/static/images/book-cover1.jpg");
+        String name1 = "book-cover1.jpg";
+        String originalFileName1 = "book-cover1.jpg";
+        String contentType1 = "image/jpg";
+        byte[] content1 = null;
+        content1 = Files.readAllBytes(path1);
+        MultipartFile image1 = new MockMultipartFile(name1,
+                originalFileName1, contentType1, content1);
         this.books.put(id, new Book(id, "Drama Book", 34,
-                new Category(null, "Drama", "Dramatic books.")
-                //, image1
-        ));
+                new Category(null, "Drama", "Dramatic books."), image1));
         id = this.generateKey();
-//        Path path2 = Paths.get("C:\\Users\\User\\Desktop\\emt\\Prodavnica\\src\\main\\resources\\templates\\book-cover2.jpg");
-//        String name2 = "book-cover1.jpg";
-//        String originalFileName2 = "book-cover1.jpg";
-//        String contentType2 = "image/jpg";
-//        byte[] content2 = null;
-//        try {
-//            content2 = Files.readAllBytes(path2);
-//        } catch (final IOException e) {
-//        }
-//        MultipartFile image2 = new MockMultipartFile(name2,
-//                originalFileName2, contentType2, content2);
+        Path path2 = Paths.get("src/main/resources/static/images/book-cover2.jpg");
+        String name2 = "book-cover1.jpg";
+        String originalFileName2 = "book-cover1.jpg";
+        String contentType2 = "image/jpg";
+        byte[] content2 = null;
+        content2 = Files.readAllBytes(path2);
+        MultipartFile image2 = new MockMultipartFile(name2,
+                originalFileName2, contentType2, content2);
         this.books.put(id, new Book(id,"Adventure Book",50,
-                new Category(null, "Adventure", "Adventurous books.")
-                //, image2
-        ));
+                new Category(null, "Adventure", "Adventurous books."), image2));
     }
 
     public List<Book> findAll() {

@@ -2,6 +2,7 @@ package Application.Web.RestControllers;
 
 import Application.Models.Category;
 import Application.Services.CategoryService;
+import Application.Services.ICategoryService;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 @RequestMapping("/api/categories")
 public class CategoryController {
 
-    private final CategoryService categoryService;
+    private final ICategoryService categoryService;
 
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
