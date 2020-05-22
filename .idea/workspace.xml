@@ -2,40 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076c03e8-51f4-4ab2-81bc-2e3f2a6e1971" name="Default Changelist" comment="Lab1 done.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Application/Repositories/ICategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Application/Services/ICategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Repositories/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Repositories/Interfaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Repositories/IBookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Repositories/book-cover1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/book-cover1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Repositories/book-cover2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/book-cover2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Services/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Services/Interfaces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Services/IBookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Web/Controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Web/Controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Web/Controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Web/Controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Web/RestControllers/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Web/RestControllers/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/book-cover1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/book-cover2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/book-cover2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Application/Models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Models/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Application/Repositories/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Repositories/BookRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/Repositories/IBookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Repositories/IBookRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/Repositories/ICategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Repositories/ICategoryRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Application/Services/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Services/BookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/Services/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Services/CategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/Services/IBookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Services/IBookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/Services/ICategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Services/ICategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/Web/Controllers/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Web/Controllers/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/Web/Controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Web/Controllers/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/Web/RestControllers/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Web/RestControllers/CategoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/book-cover1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/book-cover2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/books.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Prodavnica.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,14 +117,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="Lab1 done." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="485" y="71" key="#ProdavnicaApplication" timestamp="1590149729891">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="485" y="71" key="#ProdavnicaApplication/0.0.1536.824@0.0.1536.824" timestamp="1590149729891" />
     <state x="566" y="272" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1586698535525">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="272" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824/-1600.0.1280.920@0.0.1536.824" timestamp="1586698535525" />
-    <state x="385" y="7" key="CommitChangelistDialog2" timestamp="1586974822862">
+    <state x="385" y="7" key="CommitChangelistDialog2" timestamp="1590149934822">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586974822862" />
+    <state x="385" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590149934822" />
     <state width="478" height="466" key="DebuggerActiveHint" timestamp="1586973875515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -162,26 +137,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="639" y="306" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1586872490427" />
-    <state width="1493" height="97" key="GridCell.Tab.0.bottom" timestamp="1586974822890">
+    <state width="1493" height="97" key="GridCell.Tab.0.bottom" timestamp="1590149807656">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824/-1600.0.1280.920@0.0.1536.824" timestamp="1586771412235" />
-    <state width="1493" height="97" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586974822890" />
-    <state width="1493" height="97" key="GridCell.Tab.0.center" timestamp="1586974822890">
+    <state width="1493" height="97" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590149807656" />
+    <state width="1493" height="97" key="GridCell.Tab.0.center" timestamp="1590149807656">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824/-1600.0.1280.920@0.0.1536.824" timestamp="1586771412234" />
-    <state width="1493" height="97" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586974822890" />
-    <state width="1493" height="97" key="GridCell.Tab.0.left" timestamp="1586974822890">
+    <state width="1493" height="97" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590149807656" />
+    <state width="1493" height="97" key="GridCell.Tab.0.left" timestamp="1590149807656">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824/-1600.0.1280.920@0.0.1536.824" timestamp="1586771412234" />
-    <state width="1493" height="97" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586974822890" />
-    <state width="1493" height="97" key="GridCell.Tab.0.right" timestamp="1586974822890">
+    <state width="1493" height="97" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590149807656" />
+    <state width="1493" height="97" key="GridCell.Tab.0.right" timestamp="1590149807656">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824/-1600.0.1280.920@0.0.1536.824" timestamp="1586771412235" />
-    <state width="1493" height="97" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586974822890" />
+    <state width="1493" height="97" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590149807656" />
     <state width="1493" height="153" key="GridCell.Tab.1.bottom" timestamp="1586974432957">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -211,19 +186,19 @@
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824/-1600.0.1280.920@0.0.1536.824" timestamp="1586697866549" />
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586871259208" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1586872155920">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590149942731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586872155920" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590149942731" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1586971622542">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1586971622542" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586809870466">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590149875705">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1600.0.1280.920@0.0.1536.824" timestamp="1586772813774" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586809870466" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590149875705" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1586699334467">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
