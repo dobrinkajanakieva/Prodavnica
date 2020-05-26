@@ -2,23 +2,30 @@ package Application.Services;
 
 import Application.Models.Category;
 import Application.Models.Exceptions.CategoryNotFoundException;
-import Application.Repositories.CategoryRepository;
+//import Application.Repositories.CategoryRepository;
 import Application.Repositories.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.expression.Lists;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class CategoryService implements ICategoryService {
-    private final ICategoryRepository categoryRepository;
+    @Autowired
+    private ICategoryRepository categoryRepository;
 
-    public CategoryService(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
-    }
+    //public CategoryService(CategoryRepository categoryRepository) {
+        //this.categoryRepository = categoryRepository;
+    //}
+
+    public CategoryService() {}
 
     public List<Category> findAll() {
-        return this.categoryRepository.findAll();
+        List<Category> result = new ArrayList<Category>();
+        this.categoryRepository.findAll().forEach(result::add);
+        return result;
     }
 
     public Category findById(Long id) {

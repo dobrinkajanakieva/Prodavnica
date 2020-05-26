@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface IBookService {
     List<Book> findAll();
-    List<Book> findAllByCategoryId(Long categoryId);
+    List<Book> findAllById(Long categoryId);
     Book findById(Long id);
     Book saveBook(String name, Integer numberOfCopies, MultipartFile image, Long categoryId) throws IOException;
     Book saveBook(Book book);
