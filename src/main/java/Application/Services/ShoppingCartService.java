@@ -7,6 +7,9 @@ import Application.Models.Exceptions.ShoppingCartIsNotActiveException;
 import Application.Repositories.IBookRepository;
 import Application.Repositories.ICartItemRepository;
 import Application.Repositories.IShoppingCartRepository;
+import Application.Repositories.ITransactionRepository;
+import com.stripe.exception.*;
+import com.stripe.model.Charge;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,9 +24,13 @@ public class ShoppingCartService implements IShoppingCartService {
     @Autowired
     private IShoppingCartRepository shoppingCartRepository;
     @Autowired
+    private ITransactionRepository transactionRepository;
+    @Autowired
     private ICartItemRepository cartItemRepository;
     @Autowired
     private IBookService bookService;
+    @Autowired
+    private IStripeService stripeService;
     private final IUserService userService;
 
     public ShoppingCartService(UserService userService) {
@@ -32,7 +39,7 @@ public class ShoppingCartService implements IShoppingCartService {
 
     public ShoppingCart createShoppingCart(String userId) {
         User user = this.userService.findById(userId);
-        if (this.shoppingCartRepository.existsByUserUsernameAndStatus(user.getUsername(), Status.CREATED)) {
+        if (shoppingCartExists(userId)) {
             throw new ActiveShoppingCartAlraedyExists();
         }
         ShoppingCart shoppingCart = new ShoppingCart();
@@ -42,17 +49,27 @@ public class ShoppingCartService implements IShoppingCartService {
         return this.shoppingCartRepository.save(shoppingCart);
     }
 
+    public boolean shoppingCartExists(String userId) {
+        User user = this.userService.findById(userId);
+        return this.shoppingCartRepository.existsByUserUsernameAndStatus(user.getUsername(), Status.CREATED);
+    }
+
     public ShoppingCart addBookToShoppingCart(String userId, Long bookId) {
         ShoppingCart shoppingCart = this.getActiveShoppingCartOrCreateNew(userId);
         Book book = this.bookService.findById(bookId);
         List<Book> books = shoppingCart.getBooks();
-        for (Book b : books) {
-            if (b.getId().equals(bookId)) {
-                return shoppingCart;
-            }
-        }
         books.add(book);
         return this.shoppingCartRepository.save(shoppingCart);
+    }
+
+    public void saveShoppingCart(ShoppingCart shoppingCart, int price) {
+        shoppingCart.setStatus(Status.SUCCESSFUL);
+        shoppingCart.setPrice(price);
+        this.shoppingCartRepository.save(shoppingCart);
+    }
+
+    public void saveTransaction(ChargeRequest chargeRequest) {
+        this.transactionRepository.save(chargeRequest);
     }
 
     public ShoppingCart removeBookFromShoppingCart(String userId, Long bookId) {
@@ -95,6 +112,7 @@ public class ShoppingCartService implements IShoppingCartService {
             throw new ShoppingCartIsNotActiveException();
         }
 
+        int price = 0;
         List<Book> books = shoppingCart.getBooks();
 
         for (Book book : books) {
@@ -103,9 +121,32 @@ public class ShoppingCartService implements IShoppingCartService {
             }
             book.setNumberOfCopies(book.getNumberOfCopies() -1);
         }
-
         shoppingCart.setBooks(books);
         shoppingCart.setStatus(Status.SUCCESSFUL);
         return this.shoppingCartRepository.save(shoppingCart);
+    }
+
+    public ShoppingCart validShoppingCart(String userId) {
+        ShoppingCart shoppingCart = this.shoppingCartRepository
+                .findByUserUsernameAndStatus(userId, Status.CREATED);
+        if (shoppingCart == null) {
+            throw new ShoppingCartIsNotActiveException();
+        }
+
+        int price = 0;
+        List<Book> books = shoppingCart.getBooks();
+
+        for (Book book : books) {
+            if (book.getNumberOfCopies() <= 0) {
+                throw new BookOutOfStockException(book.getId());
+            }
+            book.setNumberOfCopies(book.getNumberOfCopies() -1);
+            price += 1000; //sekoja kniga e 1000 centi
+        }
+
+        shoppingCart.setBooks(books);
+        shoppingCart.setPrice(price);
+        this.shoppingCartRepository.save(shoppingCart);
+        return shoppingCart;
     }
 }

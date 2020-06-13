@@ -2,6 +2,7 @@ package Application.Repositories;
 
 import Application.Models.ShoppingCart;
 import Application.Models.Status;
+import com.stripe.model.Charge;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

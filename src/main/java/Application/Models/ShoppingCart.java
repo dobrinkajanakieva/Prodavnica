@@ -31,17 +31,21 @@ public class ShoppingCart {
     @ManyToMany
     private List<Book> books;
 
+    @NotNull
+    private int price;
+
     public ShoppingCart() {
         this.books = new ArrayList<>();
     }
 
-    public ShoppingCart(Long id, Status status, LocalDateTime dateCreated, LocalDateTime dateClosed, User user, List<Book> books) {
+    public ShoppingCart(Long id, Status status, LocalDateTime dateCreated, LocalDateTime dateClosed, User user, List<Book> books, int price) {
         this.id = id;
         this.status = status;
         this.dateCreated = dateCreated;
         this.dateClosed = dateClosed;
         this.user = user;
         this.books = books;
+        this.price = price;
     }
 
     public void setId(Long id) { this.id = id; }
@@ -50,10 +54,12 @@ public class ShoppingCart {
     public void setDateClosed(LocalDateTime dateClosed) { this.dateClosed = dateClosed; }
     public void setUser(User user) { this.user = user; }
     public void setBooks(List<Book> books) { this.books = books; }
+    public void setPrice(int price) { this.price = price; }
     public Long getId() { return this.id; }
     public Status getStatus() { return this.status; }
     public LocalDateTime getDateCreated() { return this.dateCreated; }
     public LocalDateTime getDateClosed() { return this.dateClosed; }
     public User getUser() { return this.user; }
     public List<Book> getBooks() { return this.books; }
+    public int getPrice() { return this.price; }
 }

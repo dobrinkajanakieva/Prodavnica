@@ -36,14 +36,14 @@ public class ShoppingCartController {
     }
 
     @DeleteMapping("/{bookId}/books")
-    public ShoppingCart removeProductFromShoppingCart(@PathVariable Long bookId) {
+    public ShoppingCart removeBookFromShoppingCart(@PathVariable Long bookId) {
         return this.shoppingCartService.removeBookFromShoppingCart(
                 this.authService.getCurrentUserId(),
                 bookId
         );
     }
 
-    @DeleteMapping
+    @RequestMapping(value = "/cancel")
     public ShoppingCart cancelActiveShoppingCart() {
         return this.shoppingCartService.cancelActiveShoppingCart(this.authService.getCurrentUserId());
     }

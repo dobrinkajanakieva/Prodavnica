@@ -1,6 +1,7 @@
 package Application.Services;
 
 import Application.Models.CartItem;
+import Application.Models.ChargeRequest;
 import Application.Models.ShoppingCart;
 
 import java.util.List;
@@ -12,4 +13,8 @@ public interface IShoppingCartService {
     ShoppingCart getActiveShoppingCartOrCreateNew(String userId);
     ShoppingCart cancelActiveShoppingCart(String userId);
     ShoppingCart checkoutShoppingCart(String userId);
+    boolean shoppingCartExists(String userId);
+    ShoppingCart validShoppingCart(String userId);
+    void saveShoppingCart(ShoppingCart shoppingCart, int price);
+    void saveTransaction(ChargeRequest chargeRequest);
 }

@@ -2,6 +2,7 @@ package Application.Web.Controllers;
 
 import Application.Models.Category;
 import Application.Models.Book;
+import Application.Models.ChargeRequest;
 import Application.Services.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,7 +66,7 @@ public class BookController {
     public String saveBook(
             @Valid @ModelAttribute("book")  Book book,
             BindingResult bindingResult,
-            Model model) throws IOException {
+            Model model) {
 
         if (bindingResult.hasErrors()) {
             List<Category> categories = this.categoryService.findAll();
@@ -86,8 +87,11 @@ public class BookController {
         return "redirect:/books";
     }
 
-    @GetMapping("/{id}/addbook")
+    @PostMapping("/{id}/addbook")
     public String addBook(@PathVariable Long id) {
+
+        if (!this.shoppingCartService.shoppingCartExists(this.authService.getCurrentUserId()))
+            this.shoppingCartService.createShoppingCart(this.authService.getCurrentUserId());
         this.shoppingCartService.addBookToShoppingCart(this.authService.getCurrentUserId(), id);
         return "redirect:/books";
     }

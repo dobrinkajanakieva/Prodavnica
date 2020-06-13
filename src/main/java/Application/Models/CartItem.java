@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class CartItem implements Serializable {
 
     @Id
-    @ManyToOne
+    @ManyToOne(targetEntity = ShoppingCart.class)
     private ShoppingCart shoppingCart;
 
     @Id
